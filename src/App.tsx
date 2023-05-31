@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { poseidon1 } from "poseidon-lite";
+import { useState } from "react";
 
-function App() {
+export default function App() {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (event: any) => {
+    setInputValue(event.target.value);
+  };
+
+  const computeHash = () => {
+    if (inputValue === "") return;
+    try {
+      return poseidon1([BigInt(inputValue)]).toString();
+    } catch (e) {
+      return "Cannot convert characters";
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Poseidon Hash</h1>
+      <input value={inputValue} onChange={handleChange} />
+      <h2>Hash value: {computeHash()}</h2>
     </div>
   );
 }
-
-export default App;
