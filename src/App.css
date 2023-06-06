@@ -1,5 +1,18 @@
+body{
+  background-color: #141421;
+}
+
 .App {
+  margin: 30px;
   text-align: center;
+  color: #84D0DD;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.HashOut {
+  white-space: normal;
+  width: 100%;
+  /* overflow: scroll; */
 }
 
 .App-logo {

@@ -1,28 +1,12 @@
 import "./App.css";
-import { poseidon1 } from "poseidon-lite";
-import { useState } from "react";
+import Hash from "./components/Hash";
 
 export default function App() {
-  const [inputValue, setInputValue] = useState("");
-
-  const handleChange = (event: any) => {
-    setInputValue(event.target.value);
-  };
-
-  const computeHash = () => {
-    if (inputValue === "") return;
-    try {
-      return poseidon1([BigInt(inputValue)]).toString();
-    } catch (e) {
-      return "Cannot convert characters";
-    }
-  };
-
-  return (
-    <div className="App">
-      <h1>Poseidon Hash</h1>
-      <input value={inputValue} onChange={handleChange} />
-      <h2>Hash value: {computeHash()}</h2>
-    </div>
-  );
+    return (
+        <div className="App">
+          <img src="logo.png" width={50}></img>
+            <h1>Online Poseidon Hash</h1>
+            <Hash />
+        </div>
+    );
 }
