@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
+
 body{
   background-color: #141421;
 }
@@ -6,7 +8,7 @@ body{
   margin: 30px;
   text-align: center;
   color: #84D0DD;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Keania One', cursive;
 }
 
 .HashOut {

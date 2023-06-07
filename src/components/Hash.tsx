@@ -8,10 +8,6 @@ export default () => {
 
     const computeHash = (values: { value: string }[]) => {
         const len = values.length;
-        if (len > 16) {
-            setHash("Cannot hash more than 16 elements");
-            return;
-        }
         for (let e of values) {
             if (e.value === "") {
                 setHash("");
@@ -37,7 +33,13 @@ export default () => {
     };
 
     const handleAddFields = () => {
-        setInputFields([...inputFields, { value: "" }]);
+        const values = [...inputFields, {value: ""}];
+        const len = values.length;
+        if (len > 16) {
+            setHash("Cannot hash more than 16 elements");
+            return;
+        }
+        setInputFields(values);
         setHash("");
     };
 
@@ -53,11 +55,13 @@ export default () => {
             {inputFields.map((inputField, index) => (
                 <div key={index}>
                     <input
+                        className="InputField"
                         type="text"
                         value={inputField.value}
                         onChange={(event) => handleInputChange(index, event)}
                     />
                     <button
+                        className="RemoveButton"
                         type="button"
                         onClick={() => handleRemoveFields(index)}
                     >
@@ -65,10 +69,22 @@ export default () => {
                     </button>
                 </div>
             ))}
-            <button type="button" onClick={handleAddFields}>
+            <button
+                className="AddButton"
+                type="button"
+                onClick={handleAddFields}
+            >
                 Add Field
             </button>
-            <p className="HashOut">{hash}</p>
+            <div>
+                <h2>Poseidon Hash Result:</h2>
+                <textarea
+                    className="HashOut"
+                    cols={40}
+                    rows={2}
+                    value={hash}
+                ></textarea>
+            </div>
         </div>
     );
 };
