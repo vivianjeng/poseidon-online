@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Keania+One&display=swap");
 
 .HashOut {
     width: 50%;
     font-size: 20px;
     font-style: normal;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
     border-bottom: 1px solid #ebf8fa;
     caret-color: none;
     outline: none;
@@ -20,7 +21,7 @@
 
 .RemoveButton {
     font-size: large;
-    font-family: 'Keania One', cursive;
+    font-family: "Keania One", cursive;
     background: #84d0dd;
     border-radius: 12px;
     color: #141421;
@@ -41,7 +42,7 @@
 
 .AddButton {
     font-size: large;
-    font-family: 'Keania One', cursive;
+    font-family: "Keania One", cursive;
     background: #84d0dd;
     border-radius: 12px;
     color: #141421;
@@ -54,6 +55,28 @@
     min-width: 120px;
 }
 
+.HexButton {
+    font-size: large;
+    font-family: "Keania One", cursive;
+    background: #141421;
+    border-radius: 12px;
+    color: #84d0dd;
+    caret-color: none;
+    border-color: #84d0dd;
+    padding: 10px;
+    margin: 10px;
+    min-height: 30px;
+    min-width: 120px;
+}
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+}
+
 .AddButton:hover {
     transition: 0.3s;
     color: #84d0dd;
@@ -61,11 +84,13 @@
 }
 
 .InputField {
+    width: 40%;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
     border-bottom: 1px solid #ebf8fa;
     caret-color: none;
     outline: none;
