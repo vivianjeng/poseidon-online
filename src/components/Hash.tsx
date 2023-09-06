@@ -2,7 +2,7 @@ import "./Hash.css";
 import * as poseidon from "poseidon-lite";
 import { useState } from "react";
 
-export default () => {
+const Hasher = () => {
     const [inputFields, setInputFields] = useState([{ value: "" }]);
     const [hash, setHash] = useState("");
     const [hex, setHex] = useState(false);
@@ -108,3 +108,5 @@ export default () => {
         </div>
     );
 };
+
+export default Hasher;

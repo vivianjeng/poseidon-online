@@ -1,9 +1,11 @@
-export default () => {
+const Footer = () => {
     return (
         <footer>
             <a href="https://github.com/vivianjeng/poseidon-online">
-                <img src="github.svg" width="25px" />
+                <img alt="github" src="github.svg" width="25px" />
             </a>
         </footer>
     );
 };
+
+export default Footer;
